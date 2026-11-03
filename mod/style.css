@@ -1,0 +1,437 @@
+
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #111111;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+
+/* NAVIGATION BAR */
+
+
+header {
+    background-color: #181818;
+    padding: 20px 8%;
+    border-bottom: 1px solid #292929;
+
+    /* Keep header visible while scrolling */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4da6ff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4da6ff;
+}
+
+
+/* HOME SECTION */
+
+.home-section {
+    min-height: 85vh;
+    padding: 60px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.greeting {
+    color: #4da6ff;
+    font-size: 20px;
+}
+
+.home-content h1 {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.home-content h2 {
+    font-size: 25px;
+    color: #bbbbbb;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.main-button {
+    display: inline-block;
+    background-color: #4da6ff;
+    color: #111111;
+
+    padding: 12px 25px;
+    border-radius: 5px;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background-color: #ffffff;
+}
+
+
+/* PROFILE IMAGE */
+
+.profile-container img {
+    width: 300px;
+    height: 300px;
+
+    object-fit: cover;
+    border-radius: 70%;
+
+    border: 4px solid #4da6ff;
+}
+
+
+/* CONTENT SECTIONS */
+
+.content-section {
+    padding: 100px 8%;
+    min-height: 300px;
+
+    border-top: 1px solid #292929;
+}
+
+.content-section h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.content-section p {
+    color: #aaaaaa;
+    line-height: 1.8;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #181818;
+    text-align: center;
+    padding: 25px;
+
+    color: #888888;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media screen and (max-width: 768px) {
+
+    /* NAVIGATION */
+
+    header {
+        padding: 20px 5%;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        flex-direction: column;
+        width: 100%;
+
+        gap: 0;
+        margin-top: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        border-top: 1px solid #292929;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 0;
+    }
+
+
+    /* HOME SECTION */
+
+    .home-section {
+        min-height: auto;
+
+        flex-direction: column-reverse;
+        text-align: center;
+
+        padding: 70px 5%;
+        gap: 35px;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+
+    .home-content h2 {
+        font-size: 21px;
+    }
+
+    .profile-container img {
+        width: 210px;
+        height: 210px;
+    }
+
+
+    /* OTHER SECTIONS */
+
+    .content-section {
+        padding: 70px 5%;
+    }
+
+    .content-section h2 {
+        font-size: 28px;
+    }
+
+}
+
+/* PROJECT SECTION */
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading p {
+    color: #aaaaaa;
+    line-height: 1.8;
+}
+
+
+/* PROJECT GRID */
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+
+
+/* PROJECT CARD */
+
+.project-card {
+    height: 280px;
+
+    background-color: #1b1b1b;
+
+    border: 1px solid #333333;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #4da6ff;
+}
+
+
+/* PROJECT IMAGE */
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #4da6ff;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* PROJECT DETAILS */
+
+.project-details {
+    padding: 25px;
+}
+
+.project-details h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.project-details p {
+    color: #aaaaaa;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+/* TECHNOLOGY TAGS */
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+.project-technologies span {
+    background-color: #292929;
+    color: #4da6ff;
+
+    padding: 7px 12px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+}
+
+
+/* PROJECT LINKS */
+
+.project-links {
+    display: flex;
+    gap: 15px;
+}
+
+.project-links a {
+    text-decoration: none;
+
+    color: #4da6ff;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.project-links a:hover {
+    color: white;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media screen and (max-width: 768px) {
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        height: 230px;
+    }
+
+}
+.project-card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-card p {
+    padding: 20px;
+    color: #aaaaaa;
+    line-height: 1.7;
+}
